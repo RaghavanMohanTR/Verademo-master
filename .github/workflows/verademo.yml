@@ -1,4 +1,4 @@
-name: Verademo
+name: Veracode Demo scan
 
 on: 
   workflow_dispatch:
@@ -14,6 +14,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+        
+    - name: Checj Docker version
+      run: docker version
   
     - name: Build with Maven
       run: mvn clean verify
