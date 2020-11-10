@@ -16,10 +16,10 @@ jobs:
       - name: Check input
         shell: bash
         run: | 
-          if [ ${{ github.event.inputs.Component }} eq 'api' ]
+          if [ ${{ github.event.inputs.Component }} == 'api' ]
           then
             echo "API"
-          elif [ ${{ github.event.inputs.Component }} eq 'adminapi' ]
+          elif [ ${{ github.event.inputs.Component }} == 'adminapi' ]
           then
             echo "ADMINAPI"
           else
