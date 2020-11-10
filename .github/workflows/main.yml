@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      Component:
+        description: 'AdminAPI/API/WebUI'
+        required: true
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check input
+        shell: bash
+        run: | 
+          if [ ${{ github.event.inputs.Component }} eq 'api' ]
+          then
+            echo "API"
+          elif [ ${{ github.event.inputs.Component }} eq 'adminapi' ]
+          then
+            echo "ADMINAPI"
+          else
+            echo "None of the condition met"
+          fi
